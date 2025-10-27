@@ -65,7 +65,8 @@ class MainApp extends StatelessWidget {
                   ),
                   const SizedBox(height: 20),//кнопка кон
                   ElevatedButton(
-                    onPressed: () {Navigator.of(context).push(
+                    onPressed: () {
+                      Navigator.of(context).push(
                         MaterialPageRoute(
                           builder: (context) => const KurtkiPage(),
                         ),
