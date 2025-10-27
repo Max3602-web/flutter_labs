@@ -1,12 +1,8 @@
 import 'package:flutter/material.dart';
-import 'KurtkiPage.dart'; 
+import 'main.dart';
 
-void main() {
-  runApp(const MainApp());
-}
-
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
+class KurtkiPage extends StatelessWidget {
+  const KurtkiPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -57,7 +53,9 @@ class MainApp extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 20),
                 children: [
                   ElevatedButton(//кнопка нач
-                    onPressed: () {},
+                    onPressed: () {
+
+                    },
                     style: ElevatedButton.styleFrom(
                       minimumSize: Size(double.infinity, 50),
                     ),
@@ -65,7 +63,9 @@ class MainApp extends StatelessWidget {
                   ),
                   const SizedBox(height: 20),//кнопка кон
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
                     style: ElevatedButton.styleFrom(
                       minimumSize: Size(double.infinity, 50),
                     ),
@@ -73,11 +73,7 @@ class MainApp extends StatelessWidget {
                   ),
                   const SizedBox(height: 20),
                   ElevatedButton(
-                    onPressed: () {
-                      Navigator.of(context).push(
-                        MaterialPageRoute(builder: (context) => const KurtkiPage()),
-                        );
-                        },
+                    onPressed: () {},
                     style: ElevatedButton.styleFrom(
                       minimumSize: Size(double.infinity, 50),
                     ),
