@@ -13,7 +13,7 @@ class KurtkiPage extends StatelessWidget {
           backgroundColor: Colors.red,
           centerTitle: true,
           title: const Text(
-            'БЕСПЛАТНАЯ ДОСТАВКА ПО РОССИИ | WORLDWIDE DELIVERY',
+            'Окак',
             style: TextStyle(color: Colors.white, fontSize: 13.0),
           ),
         ),
@@ -54,7 +54,7 @@ class KurtkiPage extends StatelessWidget {
                 children: [
                   ElevatedButton(//кнопка нач
                     onPressed: () {
-
+                       Navigator.pop(context);
                     },
                     style: ElevatedButton.styleFrom(
                       minimumSize: Size(double.infinity, 50),

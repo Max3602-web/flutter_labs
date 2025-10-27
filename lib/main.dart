@@ -65,7 +65,12 @@ class MainApp extends StatelessWidget {
                   ),
                   const SizedBox(height: 20),//кнопка кон
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => const KurtkiPage(),
+                        ),
+                      );
+                        },
                     style: ElevatedButton.styleFrom(
                       minimumSize: Size(double.infinity, 50),
                     ),
@@ -74,9 +79,7 @@ class MainApp extends StatelessWidget {
                   const SizedBox(height: 20),
                   ElevatedButton(
                     onPressed: () {
-                      Navigator.of(context).push(
-                        MaterialPageRoute(builder: (context) => const KurtkiPage()),
-                        );
+                      
                         },
                     style: ElevatedButton.styleFrom(
                       minimumSize: Size(double.infinity, 50),
