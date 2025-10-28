@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'main.dart';
 
-
-class Tolstovki extends StatelessWidget {
-  const Tolstovki({Key? key}) : super(key: key);
+class Footbolki extends StatelessWidget {
+  const Footbolki({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +13,7 @@ class Tolstovki extends StatelessWidget {
           backgroundColor: Colors.red,
           centerTitle: true,
           title: const Text(
-            'Tolstovki',
+            'Footbolki',
             style: TextStyle(color: Colors.white, fontSize: 13.0),
           ),
         ),
@@ -74,7 +73,9 @@ class Tolstovki extends StatelessWidget {
                   ),
                   const SizedBox(height: 20),
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      navigatorKey.currentState?.pushNamed('/Tolstovki');
+                    },
                     style: ElevatedButton.styleFrom(
                       minimumSize: Size(double.infinity, 50),
                     ),
@@ -92,9 +93,7 @@ class Tolstovki extends StatelessWidget {
                   ),
                   const SizedBox(height: 20),
                   ElevatedButton(
-                    onPressed: () {
-                      navigatorKey.currentState?.pushNamed('/Footbolki');
-                    },
+                    onPressed: () {},
                     style: ElevatedButton.styleFrom(
                       minimumSize: Size(double.infinity, 50),
                     ),
@@ -122,6 +121,12 @@ class Tolstovki extends StatelessWidget {
     );
   }
 }
+
+// class Tovar extends StatelessWidget{
+//   const Tovar ({key?key}) : super(key: key);
+  
+// }
+  
 class CustomFooter extends StatelessWidget {
   const CustomFooter({Key? key}) : super(key: key);
 

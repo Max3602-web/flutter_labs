@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'main.dart';
 
+
 class KurtkiPage extends StatelessWidget {
   const KurtkiPage({Key? key}) : super(key: key);
 
@@ -13,7 +14,7 @@ class KurtkiPage extends StatelessWidget {
           backgroundColor: Colors.red,
           centerTitle: true,
           title: const Text(
-            'БЕСПЛАТНАЯ ДОСТАВКА ПО РОССИИ | WORLDWIDE DELIVERY',
+            'kurtki',
             style: TextStyle(color: Colors.white, fontSize: 13.0),
           ),
         ),
@@ -81,7 +82,9 @@ class KurtkiPage extends StatelessWidget {
                   ),
                   const SizedBox(height: 20),
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      navigatorKey.currentState?.pushNamed('/Shtani&shorti');
+                    },
                     style: ElevatedButton.styleFrom(
                       minimumSize: Size(double.infinity, 50),
                     ),
@@ -89,7 +92,9 @@ class KurtkiPage extends StatelessWidget {
                   ),
                   const SizedBox(height: 20),
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      navigatorKey.currentState?.pushNamed('/Footbolki');
+                    },
                     style: ElevatedButton.styleFrom(
                       minimumSize: Size(double.infinity, 50),
                     ),
@@ -97,7 +102,9 @@ class KurtkiPage extends StatelessWidget {
                   ),
                   const SizedBox(height: 20),
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      navigatorKey.currentState?.pushNamed('/Shapki');
+                    },
                     style: ElevatedButton.styleFrom(
                       minimumSize: Size(double.infinity, 50),
                     ),

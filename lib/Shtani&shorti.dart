@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'main.dart';
 
-
-class Tolstovki extends StatelessWidget {
-  const Tolstovki({Key? key}) : super(key: key);
+class Shtanishorti extends StatelessWidget {
+  const Shtanishorti({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +13,7 @@ class Tolstovki extends StatelessWidget {
           backgroundColor: Colors.red,
           centerTitle: true,
           title: const Text(
-            'Tolstovki',
+            'Shtani&shorti',
             style: TextStyle(color: Colors.white, fontSize: 13.0),
           ),
         ),
@@ -74,7 +73,9 @@ class Tolstovki extends StatelessWidget {
                   ),
                   const SizedBox(height: 20),
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      navigatorKey.currentState?.pushNamed('/Tolstovki');
+                    },
                     style: ElevatedButton.styleFrom(
                       minimumSize: Size(double.infinity, 50),
                     ),
@@ -82,9 +83,7 @@ class Tolstovki extends StatelessWidget {
                   ),
                   const SizedBox(height: 20),
                   ElevatedButton(
-                    onPressed: () {
-                      navigatorKey.currentState?.pushNamed('/Shtani&shorti');
-                    },
+                    onPressed: () {},
                     style: ElevatedButton.styleFrom(
                       minimumSize: Size(double.infinity, 50),
                     ),

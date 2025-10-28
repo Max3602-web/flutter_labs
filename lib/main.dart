@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_labs/Footbolki.dart';
+import 'package:flutter_labs/Shtani&shorti.dart';
 import 'KurtkiPage.dart';
 import 'Tolstovki.dart';
+import 'Footbolki.dart';
+import 'Shapki.dart';
 
 final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 void main() {
@@ -11,6 +15,9 @@ void main() {
       '/all':(context) => const MainApp(),
       '/kurtki': (context) => const KurtkiPage(),
       '/Tolstovki':(context) => const Tolstovki(),
+      '/Shtani&shorti':(cantext) => const Shtanishorti(),
+      '/Footbolki':(cantext) => const Footbolki(),
+      '/Shapki':(cantext) => const Shapki(),
     },
     home: const MainApp(),
   ));
@@ -96,7 +103,9 @@ class MainApp extends StatelessWidget {
                   ),
                   const SizedBox(height: 20),
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      navigatorKey.currentState?.pushNamed('/Shtani&shorti');
+                    },
                     style: ElevatedButton.styleFrom(
                       minimumSize: Size(double.infinity, 50),
                     ),
@@ -104,7 +113,9 @@ class MainApp extends StatelessWidget {
                   ),
                   const SizedBox(height: 20),
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      navigatorKey.currentState?.pushNamed('/Footbolki');
+                    },
                     style: ElevatedButton.styleFrom(
                       minimumSize: Size(double.infinity, 50),
                     ),
@@ -112,7 +123,9 @@ class MainApp extends StatelessWidget {
                   ),
                   const SizedBox(height: 20),
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      navigatorKey.currentState?.pushNamed('/Shapki');
+                    },
                     style: ElevatedButton.styleFrom(
                       minimumSize: Size(double.infinity, 50),
                     ),
