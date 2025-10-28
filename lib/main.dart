@@ -1,8 +1,16 @@
 import 'package:flutter/material.dart';
 import 'KurtkiPage.dart'; 
 
+final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 void main() {
-  runApp(const MainApp());
+  runApp(MaterialApp(
+    navigatorKey: navigatorKey,
+    initialRoute: '/',
+    routes: {
+      '/kurtki': (context) => const KurtkiPage(),
+    },
+    home: const MainApp(),
+  ));
 }
 
 class MainApp extends StatelessWidget {
@@ -66,17 +74,13 @@ class MainApp extends StatelessWidget {
                   const SizedBox(height: 20),//кнопка кон
                   ElevatedButton(
                     onPressed: () {
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (context) => const KurtkiPage(),
+                      navigatorKey.currentState?.pushNamed('/kurtki');
+                      },
+                      style: ElevatedButton.styleFrom(
+                        minimumSize: Size(double.infinity, 50),
                         ),
-                      );
-                        },
-                    style: ElevatedButton.styleFrom(
-                      minimumSize: Size(double.infinity, 50),
-                    ),
-                    child: const Text('Куртки'),
-                  ),
+                        child: const Text('Куртки'),
+                        ),
                   const SizedBox(height: 20),
                   ElevatedButton(
                     onPressed: () {

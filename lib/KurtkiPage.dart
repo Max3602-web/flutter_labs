@@ -63,9 +63,7 @@ class KurtkiPage extends StatelessWidget {
                   ),
                   const SizedBox(height: 20),//кнопка кон
                   ElevatedButton(
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
+                    onPressed: () {},
                     style: ElevatedButton.styleFrom(
                       minimumSize: Size(double.infinity, 50),
                     ),
