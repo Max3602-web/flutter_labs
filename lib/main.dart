@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'KurtkiPage.dart'; 
+import 'KurtkiPage.dart';
+import 'Tolstovki.dart';
 
 final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 void main() {
@@ -7,7 +8,9 @@ void main() {
     navigatorKey: navigatorKey,
     initialRoute: '/',
     routes: {
+      '/all':(context) => const MainApp(),
       '/kurtki': (context) => const KurtkiPage(),
+      '/Tolstovki':(context) => const Tolstovki(),
     },
     home: const MainApp(),
   ));
@@ -84,7 +87,7 @@ class MainApp extends StatelessWidget {
                   const SizedBox(height: 20),
                   ElevatedButton(
                     onPressed: () {
-                      
+                      navigatorKey.currentState?.pushNamed('/Tolstovki');
                         },
                     style: ElevatedButton.styleFrom(
                       minimumSize: Size(double.infinity, 50),

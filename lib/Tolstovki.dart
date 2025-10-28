@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'main.dart';
 
-class KurtkiPage extends StatelessWidget {
-  const KurtkiPage({Key? key}) : super(key: key);
+class Tolstovki extends StatelessWidget {
+  const Tolstovki({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -63,7 +63,9 @@ class KurtkiPage extends StatelessWidget {
                   ),
                   const SizedBox(height: 20),//кнопка кон
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      navigatorKey.currentState?.pushNamed('/kurtki');
+                    },
                     style: ElevatedButton.styleFrom(
                       minimumSize: Size(double.infinity, 50),
                     ),
@@ -71,9 +73,7 @@ class KurtkiPage extends StatelessWidget {
                   ),
                   const SizedBox(height: 20),
                   ElevatedButton(
-                    onPressed: () {
-                      navigatorKey.currentState?.pushNamed('/Tolstovki');
-                    },
+                    onPressed: () {},
                     style: ElevatedButton.styleFrom(
                       minimumSize: Size(double.infinity, 50),
                     ),
