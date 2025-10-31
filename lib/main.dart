@@ -19,7 +19,7 @@ void main() {
       '/Shtani&shorti':(cantext) => const Shtanishorti(),
       '/Footbolki':(cantext) => const Footbolki(),
       '/Shapki':(cantext) => const Shapki(),
-      '/bar':(cantext) => CustomNavBar(),
+      '/Castombar':(cantext) => CustomNavBar(),
     },
     home: const MainApp(),
   ));
@@ -59,7 +59,7 @@ class MainApp extends StatelessWidget {
                   const SizedBox(width: 10),
                   ElevatedButton.icon(
                     onPressed: () {
-                      navigatorKey.currentState?.pushNamed('/bar');
+                      navigatorKey.currentState?.pushNamed('/Castombar');
                     },
                     icon: const Icon(Icons.assignment,color: Colors.grey,),
                     label: const Text(''),
