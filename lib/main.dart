@@ -5,6 +5,7 @@ import 'KurtkiPage.dart';
 import 'Tolstovki.dart';
 import 'Footbolki.dart';
 import 'Shapki.dart';
+import 'Castombar.dart';
 
 final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 void main() {
@@ -18,6 +19,7 @@ void main() {
       '/Shtani&shorti':(cantext) => const Shtanishorti(),
       '/Footbolki':(cantext) => const Footbolki(),
       '/Shapki':(cantext) => const Shapki(),
+      '/bar':(cantext) => CustomNavBar(),
     },
     home: const MainApp(),
   ));
@@ -56,8 +58,10 @@ class MainApp extends StatelessWidget {
                   ),
                   const SizedBox(width: 10),
                   ElevatedButton.icon(
-                    onPressed: () {},
-                    icon: const Icon(Icons.assignment),
+                    onPressed: () {
+                      navigatorKey.currentState?.pushNamed('/bar');
+                    },
+                    icon: const Icon(Icons.assignment,color: Colors.grey,),
                     label: const Text(''),
                     style: ElevatedButton.styleFrom(
                       elevation: 0,
@@ -79,7 +83,11 @@ class MainApp extends StatelessWidget {
                     style: ElevatedButton.styleFrom(
                       minimumSize: Size(double.infinity, 50),
                     ),
-                    child: const Text('Все товары'),
+                    child: const Text('Все товары',
+                    style: TextStyle(
+                      color: Colors.black,
+                      ),
+                      ),
                   ),
                   const SizedBox(height: 20),//кнопка кон
                   ElevatedButton(
@@ -89,8 +97,12 @@ class MainApp extends StatelessWidget {
                       style: ElevatedButton.styleFrom(
                         minimumSize: Size(double.infinity, 50),
                         ),
-                        child: const Text('Куртки'),
-                        ),
+                        child: const Text('Куртки',
+                    style: TextStyle(
+                      color: Colors.black,
+                      ),
+                      ),
+                  ),
                   const SizedBox(height: 20),
                   ElevatedButton(
                     onPressed: () {
@@ -99,7 +111,11 @@ class MainApp extends StatelessWidget {
                     style: ElevatedButton.styleFrom(
                       minimumSize: Size(double.infinity, 50),
                     ),
-                    child: const Text('Толстовки'),
+                    child: const Text('Толстовки',
+                    style: TextStyle(
+                      color: Colors.black,
+                      ),
+                      ),
                   ),
                   const SizedBox(height: 20),
                   ElevatedButton(
@@ -109,7 +125,11 @@ class MainApp extends StatelessWidget {
                     style: ElevatedButton.styleFrom(
                       minimumSize: Size(double.infinity, 50),
                     ),
-                    child: const Text('Штаны | Шорты'),
+                    child: const Text('Штаны | Шорты',
+                    style: TextStyle(
+                      color: Colors.black,
+                      ),
+                      ),
                   ),
                   const SizedBox(height: 20),
                   ElevatedButton(
@@ -119,7 +139,11 @@ class MainApp extends StatelessWidget {
                     style: ElevatedButton.styleFrom(
                       minimumSize: Size(double.infinity, 50),
                     ),
-                    child: const Text('Футболки'),
+                    child: const Text('Футболки',
+                    style: TextStyle(
+                      color: Colors.black,
+                      ),
+                      ),
                   ),
                   const SizedBox(height: 20),
                   ElevatedButton(
@@ -129,7 +153,11 @@ class MainApp extends StatelessWidget {
                     style: ElevatedButton.styleFrom(
                       minimumSize: Size(double.infinity, 50),
                     ),
-                    child: const Text('Шапки'),
+                    child: const Text('Шапки',
+                    style: TextStyle(
+                      color: Colors.black,
+                      ),
+                      ),
                   ),
                 ],
               ),

@@ -36,7 +36,7 @@ class KurtkiPage extends StatelessWidget {
                   const SizedBox(width: 10),
                   ElevatedButton.icon(
                     onPressed: () {},
-                    icon: const Icon(Icons.assignment),
+                    icon: const Icon(Icons.assignment,color: Colors.grey,),
                     label: const Text(''),
                     style: ElevatedButton.styleFrom(
                       elevation: 0,
@@ -60,7 +60,11 @@ class KurtkiPage extends StatelessWidget {
                     style: ElevatedButton.styleFrom(
                       minimumSize: Size(double.infinity, 50),
                     ),
-                    child: const Text('Все товары'),
+                    child: const Text('Все товары',
+                    style: TextStyle(
+                      color: Colors.black,
+                      ),
+                      ),
                   ),
                   const SizedBox(height: 20),//кнопка кон
                   ElevatedButton(
@@ -68,7 +72,11 @@ class KurtkiPage extends StatelessWidget {
                     style: ElevatedButton.styleFrom(
                       minimumSize: Size(double.infinity, 50),
                     ),
-                    child: const Text('Куртки'),
+                    child: const Text('Куртки',
+                    style: TextStyle(
+                      color: Colors.black,
+                      ),
+                      ),
                   ),
                   const SizedBox(height: 20),
                   ElevatedButton(
@@ -78,7 +86,11 @@ class KurtkiPage extends StatelessWidget {
                     style: ElevatedButton.styleFrom(
                       minimumSize: Size(double.infinity, 50),
                     ),
-                    child: const Text('Толстовки'),
+                    child: const Text('Толстовки',
+                    style: TextStyle(
+                      color: Colors.black,
+                      ),
+                      ),
                   ),
                   const SizedBox(height: 20),
                   ElevatedButton(
@@ -88,7 +100,11 @@ class KurtkiPage extends StatelessWidget {
                     style: ElevatedButton.styleFrom(
                       minimumSize: Size(double.infinity, 50),
                     ),
-                    child: const Text('Штаны | Шорты'),
+                    child: const Text('Штаны | Шорты',
+                    style: TextStyle(
+                      color: Colors.black,
+                      ),
+                      ),
                   ),
                   const SizedBox(height: 20),
                   ElevatedButton(
@@ -98,7 +114,11 @@ class KurtkiPage extends StatelessWidget {
                     style: ElevatedButton.styleFrom(
                       minimumSize: Size(double.infinity, 50),
                     ),
-                    child: const Text('Футболки'),
+                    child: const Text('Футболки',
+                    style: TextStyle(
+                      color: Colors.black,
+                      ),
+                      ),
                   ),
                   const SizedBox(height: 20),
                   ElevatedButton(
@@ -108,7 +128,11 @@ class KurtkiPage extends StatelessWidget {
                     style: ElevatedButton.styleFrom(
                       minimumSize: Size(double.infinity, 50),
                     ),
-                    child: const Text('Шапки'),
+                    child: const Text('Шапки',
+                    style: TextStyle(
+                      color: Colors.black,
+                      ),
+                      ),
                   ),
                 ],
               ),
