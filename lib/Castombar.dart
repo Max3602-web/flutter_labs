@@ -10,15 +10,6 @@ class CustomNavBar extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.end, // справа налево
         children: [
-          // Мой аккаунт
-          IconButton(
-            icon: Icon(Icons.person, color: Colors.white),
-            onPressed: () {
-              // действие при клике
-            },
-            tooltip: "Мой аккаунт",
-          ),
-
           // Корзина с счетчиком
           Stack(
             children: [
