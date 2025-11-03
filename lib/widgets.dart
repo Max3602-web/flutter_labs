@@ -17,3 +17,19 @@ Widget myButton(url,text,nav) { return
                       ),
                   );
 }
+
+Widget myDropdownMenu() {
+  final TextEditingController _dropdownController = TextEditingController();
+
+  return DropdownMenu<String>(
+    controller: _dropdownController,
+    onSelected: (String? value) {
+      print('Выбран: $value');
+    },
+    dropdownMenuEntries: [
+      DropdownMenuEntry(value: 'option1', label: 'Первый вариант'),
+      DropdownMenuEntry(value: 'option2', label: 'Второй вариант'),
+      DropdownMenuEntry(value: 'option3', label: 'Третий вариант'),
+    ],
+  );
+}
