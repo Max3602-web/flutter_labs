@@ -7,6 +7,8 @@ import 'Tolstovki.dart';
 import 'Footbolki.dart';
 import 'Shapki.dart';
 import 'Castombar.dart';
+import 'Tovarlist.dart';
+import 'Prosto0511.dart';
 
 final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 void main() {
@@ -21,6 +23,8 @@ void main() {
       '/Footbolki':(cantext) => const Footbolki(),
       '/Shapki':(cantext) => const Shapki(),
       '/Castombar':(cantext) => CustomNavBar(),
+      '/Tovarlist':(cantext) => ProductCard(imageUrl: '', title: '', description: '', price: '',),
+      '/gpag':(cantext) => gpag(),
     },
     home: const MainApp(),
   ));
@@ -66,7 +70,7 @@ class MainApp extends StatelessWidget {
                         IconButton(
                           icon: Icon(Icons.shopping_cart, color: Colors.white),
                           onPressed: () {
-
+                            navigatorKey.currentState?.pushNamed('/Tovarlist');
                           },
                           tooltip: "Корзина",
                           ),
@@ -113,7 +117,9 @@ class MainApp extends StatelessWidget {
                 ],
               ),
             ),
-            onPressed: () {
+            onPressed: (
+
+            ) {
               // действие при клике
             },
             tooltip: "Меню",
@@ -284,7 +290,9 @@ class CustomFooter extends StatelessWidget {
               IconButton(
                 icon: const Icon(Icons.message),
                 color: iconColor,
-                onPressed: () {},
+                onPressed: () {
+                  navigatorKey.currentState?.pushNamed('/gpag');
+                },
               ),
             ],
           ),
