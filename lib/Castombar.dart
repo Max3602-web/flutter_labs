@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class CustomNavBar extends StatelessWidget {
+  const CustomNavBar({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -51,7 +53,7 @@ class CustomNavBar extends StatelessWidget {
 
           // Меню гамбургер
           IconButton(
-            icon: Container(
+            icon: SizedBox(
               width: 24,
               height: 24,
               child: Column(

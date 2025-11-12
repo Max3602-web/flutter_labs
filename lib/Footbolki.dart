@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'main.dart';
 
 class Footbolki extends StatelessWidget {
-  const Footbolki({Key? key}) : super(key: key);
+  const Footbolki({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -76,7 +76,7 @@ class Footbolki extends StatelessWidget {
 
           // Меню гамбургер
           IconButton(
-            icon: Container(
+            icon: SizedBox(
               width: 24,
               height: 24,
               child: Column(
@@ -204,7 +204,7 @@ class Footbolki extends StatelessWidget {
 // }
   
 class CustomFooter extends StatelessWidget {
-  const CustomFooter({Key? key}) : super(key: key);
+  const CustomFooter({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -223,22 +223,22 @@ class CustomFooter extends StatelessWidget {
             children: [
               ElevatedButton(
                 onPressed: () {},
-                child: const Text('Доставка и возврат'),
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.grey, // цвет фона
                   padding:
                       const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
                 ),
+                child: const Text('Доставка и возврат'),
               ),
               const SizedBox(height: 8),
               ElevatedButton(
                 onPressed: () {},
-                child: const Text('Условия обслуживания',),
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.grey,
                   padding:
                       const EdgeInsets.symmetric(horizontal: 12, vertical: 8,),
                 ),
+                child: const Text('Условия обслуживания',),
               ),
             ],
           ),

@@ -4,11 +4,11 @@ import 'package:flutter_labs/Shtani&shorti.dart';
 import 'package:flutter_labs/widgets.dart';
 import 'KurtkiPage.dart';
 import 'Tolstovki.dart';
-import 'Footbolki.dart';
 import 'Shapki.dart';
 import 'Castombar.dart';
 import 'Tovarlist.dart';
 import 'Prosto0511.dart';
+import 'table_calendar.dart';
 
 final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 void main() {
@@ -25,6 +25,7 @@ void main() {
       '/Castombar':(cantext) => CustomNavBar(),
       '/Tovarlist':(cantext) => ProductCard(imageUrl: '', title: '', description: '', price: '',),
       '/gpag':(cantext) => gpag(),
+      '/calend':(cantext) => tablecalendar(),
     },
     home: const MainApp(),
   ));
@@ -105,7 +106,7 @@ class MainApp extends StatelessWidget {
 
           // Меню гамбургер
           IconButton(
-            icon: Container(
+            icon: SizedBox(
               width: 24,
               height: 24,
               child: Column(
@@ -217,7 +218,7 @@ class MainApp extends StatelessWidget {
   }
 }
 class CustomFooter extends StatelessWidget {
-  const CustomFooter({Key? key}) : super(key: key);
+  const CustomFooter({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -236,22 +237,22 @@ class CustomFooter extends StatelessWidget {
             children: [
               ElevatedButton(
                 onPressed: () {},
-                child: const Text('Доставка и возврат'),
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.grey, // цвет фона
                   padding:
                       const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
                 ),
+                child: const Text('Доставка и возврат'),
               ),
               const SizedBox(height: 8),
               ElevatedButton(
                 onPressed: () {},
-                child: const Text('Условия обслуживания',),
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.grey,
                   padding:
                       const EdgeInsets.symmetric(horizontal: 12, vertical: 8,),
                 ),
+                child: const Text('Условия обслуживания',),
               ),
             ],
           ),
@@ -285,7 +286,9 @@ class CustomFooter extends StatelessWidget {
               IconButton(
                 icon: const Icon(Icons.videogame_asset),
                 color: iconColor,
-                onPressed: () {},
+                onPressed: () {
+                  navigatorKey.currentState?.pushNamed('/calend');
+                },
               ),
               IconButton(
                 icon: const Icon(Icons.message),

@@ -19,10 +19,10 @@ Widget myButton(url,text,nav) { return
 }
 
 Widget myDropdownMenu() {
-  final TextEditingController _dropdownController = TextEditingController();
+  final TextEditingController dropdownController = TextEditingController();
 
   return DropdownMenu<String>(
-    controller: _dropdownController,
+    controller: dropdownController,
     onSelected: (String? value) {
       print('Выбран: $value');
     },

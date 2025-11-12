@@ -7,12 +7,12 @@ class ProductCard extends StatelessWidget {
   final String price;
 
   const ProductCard({
-    Key? key,
+    super.key,
     required this.imageUrl,
     required this.title,
     required this.description,
     required this.price,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -66,6 +66,8 @@ class ProductCard extends StatelessWidget {
 
 // Использование внутри виджета Scaffold
 class ProductPage extends StatelessWidget {
+  const ProductPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -75,7 +77,7 @@ class ProductPage extends StatelessWidget {
       body: ListView(
         children: [
           ProductCard(
-            imageUrl: 'https://rockit.su/wordpress/wp-content/uploads/2021/06/t-shirt02-2-716x716.png',
+            imageUrl: '',
             title: 'Товар 1',
             description: 'Описание товара 1',
             price: '₽999',
