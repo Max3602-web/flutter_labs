@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_labs/main.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:table_calendar/table_calendar.dart';
 
@@ -39,10 +40,24 @@ class _StartPageState extends State<StartPage> {
       body: Center(
         child: TableCalendar(
           firstDay: DateTime.utc(2010, 10, 16),
-          lastDay: DateTime.utc(2025, 11, 12),
+          lastDay: DateTime.utc(2025, 12, 12),
           focusedDay: DateTime.now(),
         ),
       ),
+    );
+  }
+}
+
+class ButtonBack extends StatelessWidget {
+  const ButtonBack({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      onPressed: () {
+        navigatorKey.currentState?.pushNamed('/'); 
+      },
+      child: const Text("Back to main"),
     );
   }
 }

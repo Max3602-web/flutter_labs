@@ -21,7 +21,7 @@ Widget myButton(url,text,nav) { return
 Widget myDropdownMenu() {
   final TextEditingController dropdownController = TextEditingController();
 
-  return DropdownMenu<String>(
+  return DropdownMenu(
     controller: dropdownController,
     onSelected: (String? value) {
       print('Выбран: $value');

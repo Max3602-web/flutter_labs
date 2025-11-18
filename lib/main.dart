@@ -9,6 +9,7 @@ import 'Castombar.dart';
 import 'Tovarlist.dart';
 import 'Prosto0511.dart';
 import 'table_calendar.dart';
+import 'ButtomNavigationBar.dart';
 
 final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 void main() {
@@ -26,6 +27,7 @@ void main() {
       '/Tovarlist':(cantext) => ProductCard(imageUrl: '', title: '', description: '', price: '',),
       '/gpag':(cantext) => gpag(),
       '/calend':(cantext) => tablecalendar(),
+      '/Bar':(cantext) => BottomNavigationBarExampleApp(),
     },
     home: const MainApp(),
   ));
@@ -281,7 +283,9 @@ class CustomFooter extends StatelessWidget {
               IconButton(
                 icon: const Icon(Icons.send),
                 color: iconColor,
-                onPressed: () {},
+                onPressed: () {
+                  navigatorKey.currentState?.pushNamed('/Bar');
+                },
               ),
               IconButton(
                 icon: const Icon(Icons.videogame_asset),
