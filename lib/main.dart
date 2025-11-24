@@ -10,6 +10,7 @@ import 'Tovarlist.dart';
 import 'Prosto0511.dart';
 import 'table_calendar.dart';
 import 'ButtomNavigationBar.dart';
+import 'map.dart';
 
 final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 void main() {
@@ -28,6 +29,7 @@ void main() {
       '/gpag':(cantext) => gpag(),
       '/calend':(cantext) => tablecalendar(),
       '/Bar':(cantext) => BottomNavigationBarExampleApp(),
+      '/Map':(context) => MyMapApp(),
     },
     home: const MainApp(),
   ));
@@ -278,7 +280,9 @@ class CustomFooter extends StatelessWidget {
               IconButton(
                 icon: const Icon(Icons.camera_alt),
                 color: iconColor,
-                onPressed: () {},
+                onPressed: () {
+                  //navigatorKey.currentState?.pushNamed();
+                },
               ),
               IconButton(
                 icon: const Icon(Icons.send),
@@ -299,6 +303,13 @@ class CustomFooter extends StatelessWidget {
                 color: iconColor,
                 onPressed: () {
                   navigatorKey.currentState?.pushNamed('/gpag');
+                },
+              ),
+              IconButton(
+                icon: const Icon(Icons.add_location_sharp),
+                color: iconColor,
+                onPressed: () {
+                  navigatorKey.currentState?.pushNamed('/Map');
                 },
               ),
             ],
