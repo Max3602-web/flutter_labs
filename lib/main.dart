@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_labs/Footbolki.dart';
 import 'package:flutter_labs/Shtani&shorti.dart';
@@ -318,6 +319,11 @@ class CustomFooter extends StatelessWidget {
                 onPressed: () {
                   navigatorKey.currentState?.pushNamed('/log');
                 },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.grey,
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 12, vertical: 8,),
+                ),
                 child: Text('Нажми меня')
                 ,)
             ],
