@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_labs/main.dart';
 import 'package:loader_overlay/loader_overlay.dart';
+
 void main() {
   runApp(const MyLoginApp());
 }
@@ -10,12 +11,14 @@ class MyLoginApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      initialRoute: '/',
-      routes: {
-        '/': (context) => LoginScreen(),
-        '/home': (context) => MainApp(),
-      },
+    return LoaderOverlay(
+      child: MaterialApp(
+        initialRoute: '/',
+        routes: {
+          '/': (context) => LoginScreen(),
+          '/home': (context) => MainApp(),
+        },
+      ),
     );
   }
 }
@@ -31,17 +34,27 @@ class _LoginScreenState extends State<LoginScreen> {
 
   String message = '';
 
-  void _login() {
+  void _login() async {
+    // Показываем лоадер
+    context.loaderOverlay.show();
+
     String login = _loginController.text;
     String password = _passwordController.text;
 
     const correctLogin = 'admin';
     const correctPassword = '1234';
 
+    // Имитируем задержку (например, обращение к серверу)
+    await Future.delayed(const Duration(seconds: 2));
+
+    // Проверка логина и пароля
     if (login == correctLogin && password == correctPassword) {
-      // При успехе переходим на другую страницу
+      // Скрываем лоадер и переходим
+      context.loaderOverlay.hide();
       Navigator.pushReplacementNamed(context, '/home');
     } else {
+      // Скрываем лоадер и показываем сообщение
+      context.loaderOverlay.hide();
       setState(() {
         message = 'Неверный логин или пароль.';
       });
