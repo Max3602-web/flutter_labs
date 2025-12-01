@@ -13,6 +13,7 @@ import 'table_calendar.dart';
 import 'ButtomNavigationBar.dart';
 import 'map.dart';
 import 'login.dart';
+import 'chess.dart';
 
 final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 void main() {
@@ -30,9 +31,10 @@ void main() {
       '/Tovarlist':(cantext) => ProductCard(imageUrl: '', title: '', description: '', price: '',),
       '/gpag':(cantext) => gpag(),
       '/calend':(cantext) => tablecalendar(),
-      '/Bar':(cantext) => BottomNavigationBarExampleApp(),
+      '/Bar':(cantext) => BottomNavigationBarEnhancedApp(),
       '/Map':(context) => MyMapApp(),
       '/log':(context) => MyLoginApp(),
+      '/cha':(context)=> ChessExplosionApp(),
     },
     home: const MainApp(),
   ));
@@ -224,6 +226,16 @@ class MainApp extends StatelessWidget {
     );
   }
 }
+
+class fotomarket extends StatelessWidget{
+  const fotomarket({super.key});
+  
+  @override
+  Widget build(BuildContext context) {
+    throw UnimplementedError();
+  }
+}
+
 class CustomFooter extends StatelessWidget {
   const CustomFooter({super.key});
 

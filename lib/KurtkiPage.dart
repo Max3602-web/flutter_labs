@@ -272,7 +272,9 @@ class CustomFooter extends StatelessWidget {
               IconButton(
                 icon: const Icon(Icons.message),
                 color: iconColor,
-                onPressed: () {},
+                onPressed: () {
+                  navigatorKey.currentState?.pushNamed('/cha');
+                },
               ),
             ],
           ),

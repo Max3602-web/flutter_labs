@@ -1,33 +1,57 @@
 import 'package:flutter/material.dart';
 
-/// Flutter code sample for [BottomNavigationBar].
+void main() => runApp(const BottomNavigationBarEnhancedApp());
 
-void main() => runApp(const BottomNavigationBarExampleApp());
-
-class BottomNavigationBarExampleApp extends StatelessWidget {
-  const BottomNavigationBarExampleApp({super.key});
+class BottomNavigationBarEnhancedApp extends StatelessWidget {
+  const BottomNavigationBarEnhancedApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(home: BottomNavigationBarExample());
+    return MaterialApp(
+      home: const BottomNavigationBarEnhanced(),
+      theme: ThemeData(
+        primarySwatch: Colors.indigo,
+      ),
+    );
   }
 }
 
-class BottomNavigationBarExample extends StatefulWidget {
-  const BottomNavigationBarExample({super.key});
+class BottomNavigationBarEnhanced extends StatefulWidget {
+  const BottomNavigationBarEnhanced({super.key});
 
   @override
-  State<BottomNavigationBarExample> createState() => _BottomNavigationBarExampleState();
+  State<BottomNavigationBarEnhanced> createState() => _BottomNavigationBarEnhancedState();
 }
 
-class _BottomNavigationBarExampleState extends State<BottomNavigationBarExample> {
+class _BottomNavigationBarEnhancedState extends State<BottomNavigationBarEnhanced> {
   int _selectedIndex = 0;
-  static const TextStyle optionStyle = TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
-  static const List<Widget> _widgetOptions = <Widget>[
-    Text('Index 0: Home', style: optionStyle),
-    Text('Index 1: Business', style: optionStyle),
-    Text('Index 2: School', style: optionStyle),
-    Text('Index 3: Settings', style: optionStyle),
+
+  // Страницы с кнопками
+  Widget _buildPage(String title, BuildContext context) {
+    return Center(
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Text(title, style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
+          const SizedBox(height: 20),
+          ElevatedButton(
+            onPressed: () {
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(content: Text('Кнопка на $title нажата!')),
+              );
+            },
+            child: const Text('Нажми меня'),
+          ),
+        ],
+      ),
+    );
+  }
+
+  static const List<String> _titles = [
+    'Домашняя страница',
+    'Бизнес',
+    'Образование',
+    'Настройки'
   ];
 
   void _onItemTapped(int index) {
@@ -39,33 +63,41 @@ class _BottomNavigationBarExampleState extends State<BottomNavigationBarExample>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('BottomNavigationBar Sample')),
-      body: Center(child: _widgetOptions.elementAt(_selectedIndex)),
+      appBar: AppBar(
+        title: const Text('Улучшаем BottomNavigationBar'),
+        centerTitle: true,
+        elevation: 4,
+        backgroundColor: Colors.indigo,
+      ),
+      body: _buildPage(_titles[_selectedIndex], context),
       bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
+        type: BottomNavigationBarType.fixed,
+        backgroundColor: Colors.white,
+        selectedItemColor: Colors.indigo,
+        unselectedItemColor: Colors.grey[600],
+        elevation: 10,
+        showUnselectedLabels: true,
+        selectedFontSize: 14,
+        unselectedFontSize: 12,
+        items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
-            label: 'Home',
-            backgroundColor: Colors.red,
+            label: 'Главная',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.business),
-            label: 'Business',
-            backgroundColor: Colors.green,
+            icon: Icon(Icons.business_center),
+            label: 'Бизнес',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.school),
-            label: 'School',
-            backgroundColor: Colors.purple,
+            label: 'Обучение',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.settings),
-            label: 'Settings',
-            backgroundColor: Colors.pink,
+            label: 'Настройки',
           ),
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: Colors.amber[800],
         onTap: _onItemTapped,
       ),
     );
