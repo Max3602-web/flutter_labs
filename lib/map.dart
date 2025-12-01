@@ -47,6 +47,17 @@ class MyMapApp extends StatelessWidget {
                 ),
               ],
             ),
+            Positioned(
+              bottom: 20,
+              right: 20,
+              child: ElevatedButton(
+                onPressed: () {
+                  // Действие при нажатии (например, возврат или другое)
+                  Navigator.maybePop(context);
+                },
+                child: Text('Нажми меня'),
+              ),
+            ),
           ],
         ),
       ),

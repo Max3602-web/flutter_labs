@@ -11,6 +11,7 @@ import 'Prosto0511.dart';
 import 'table_calendar.dart';
 import 'ButtomNavigationBar.dart';
 import 'map.dart';
+import 'login.dart';
 
 final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 void main() {
@@ -30,6 +31,7 @@ void main() {
       '/calend':(cantext) => tablecalendar(),
       '/Bar':(cantext) => BottomNavigationBarExampleApp(),
       '/Map':(context) => MyMapApp(),
+      '/log':(context) => MyLoginApp(),
     },
     home: const MainApp(),
   ));
@@ -312,6 +314,12 @@ class CustomFooter extends StatelessWidget {
                   navigatorKey.currentState?.pushNamed('/Map');
                 },
               ),
+              ElevatedButton(
+                onPressed: () {
+                  navigatorKey.currentState?.pushNamed('/log');
+                },
+                child: Text('Нажми меня')
+                ,)
             ],
           ),
         ],
